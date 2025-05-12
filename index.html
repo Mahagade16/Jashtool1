@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tools | Free Online Tools</title>
+    <meta name="description" content="Free online tools for images, SEO, text, developers, calculators, converters and more. tools in one place.">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --dark-color: #343a40;
+            --light-color: #ffffff;
+            --text-color: #333333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--light-color);
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #6c5ce7);
+            color: var(--light-color);
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-box button:hover {
+            background-color: #3a56e0;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .category-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-header {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 15px 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .category-header i {
+            margin-right: 10px;
+        }
+        
+        .tools-list {
+            padding: 20px;
+        }
+        
+        .tools-list a {
+            display: block;
+            padding: 10px 0;
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+        
+        .tools-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .tools-list a:last-child {
+            border-bottom: none;
+        }
+        
+        .popular-tools {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .tool-card h3 {
+            margin-bottom: 10px;
+        }
+        
+        .tool-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3a56e0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--light-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Web<span>Tools</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#popular">Popular Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>100+ Free Online Tools For Everyone</h1>
+            <p>All the tools you need in one place - free, fast, and easy to use. No installation required!</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for tools...">
+                <button><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="categories">
+        <h2 class="section-title">Tool Categories</h2>
+        <div class="categories">
+            <!-- Image Tools -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-image"></i> Image Tools
+                </div>
+                <div class="tools-list">
+                    <a href="#">Image to PNG Converter</a>
+                    <a href="#">Image to JPG Converter</a>
+                    <a href="#">Image Resizer</a>
+                    <a href="#">Image Compressor</a>
+                    <a href="#">Image Cropper</a>
+                    <a href="#">Convert Image to Base64</a>
+                    <a href="#">Convert WebP to PNG</a>
+                    <a href="#">GIF Maker</a>
+                    <a href="#">QR Code Generator</a>
+                    <a href="#">Screenshot to PDF Converter</a>
+                </div>
+            </div>
+            
+            <!-- SEO Tools -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-search"></i> SEO Tools
+                </div>
+                <div class="tools-list">
+                    <a href="#">Meta Tag Generator</a>
+                    <a href="#">Keyword Density Checker</a>
+                    <a href="#">Sitemap Generator</a>
+                    <a href="#">Robots.txt Generator</a>
+                    <a href="#">Google Index Checker</a>
+                    <a href="#">Domain Authority Checker</a>
+                    <a href="#">Backlink Checker</a>
+                    <a href="#">Page Speed Checker</a>
+                    <a href="#">XML Sitemap Validator</a>
+                    <a href="#">Mobile-Friendly Test</a>
+                </div>
+            </div>
+            
+            <!-- Text Tools -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-font"></i> Text Tools
+                </div>
+                <div class="tools-list">
+                    <a href="#">Word Counter</a>
+                    <a href="#">Character Counter</a>
+                    <a href="#">Case Converter</a>
+                    <a href="#">Plagiarism Checker</a>
+                    <a href="#">Grammar Checker</a>
+                    <a href="#">Text-to-Speech</a>
+                    <a href="#">Speech-to-Text</a>
+                    <a href="#">URL Encoder & Decoder</a>
+                    <a href="#">Fancy Text Generator</a>
+                    <a href="#">Random Text Generator</a>
+                </div>
+            </div>
+            
+            <!-- Developer Tools -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-code"></i> Developer Tools
+                </div>
+                <div class="tools-list">
+                    <a href="#">JSON Formatter</a>
+                    <a href="#">HTML to Markdown Converter</a>
+                    <a href="#">CSS Minifier</a>
+                    <a href="#">JavaScript Minifier</a>
+                    <a href="#">SQL Formatter</a>
+                    <a href="#">HTACCESS Redirect Generator</a>
+                    <a href="#">Markdown to HTML Converter</a>
+                    <a href="#">Color Code Picker</a>
+                    <a href="#">Base64 Encoder & Decoder</a>
+                    <a href="#">IP Address Lookup</a>
+                </div>
+            </div>
+            
+            <!-- Math & Calculators -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-calculator"></i> Math & Calculators
+                </div>
+                <div class="tools-list">
+                    <a href="#">Percentage Calculator</a>
+                    <a href="#">Age Calculator</a>
+                    <a href="#">BMI Calculator</a>
+                    <a href="#">Loan EMI Calculator</a>
+                    <a href="#">Scientific Calculator</a>
+                    <a href="#">Discount Calculator</a>
+                    <a href="#">Currency Converter</a>
+                    <a href="#">Time Zone Converter</a>
+                    <a href="#">Binary to Decimal Converter</a>
+                    <a href="#">Tip Calculator</a>
+                </div>
+            </div>
+            
+            <!-- Unit Converters -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-ruler-combined"></i> Unit Converters
+                </div>
+                <div class="tools-list">
+                    <a href="#">Length Converter</a>
+                    <a href="#">Weight Converter</a>
+                    <a href="#">Speed Converter</a>
+                    <a href="#">Temperature Converter</a>
+                    <a href="#">Volume Converter</a>
+                    <a href="#">Data Storage Converter</a>
+                    <a href="#">Energy Converter</a>
+                    <a href="#">Pressure Converter</a>
+                    <a href="#">Fuel Efficiency Converter</a>
+                    <a href="#">Angle Converter</a>
+                </div>
+            </div>
+            
+            <!-- Security & Encryption -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-lock"></i> Security & Encryption
+                </div>
+                <div class="tools-list">
+                    <a href="#">MD5 Hash Generator</a>
+                    <a href="#">SHA256 Hash Generator</a>
+                    <a href="#">Password Generator</a>
+                    <a href="#">Random String Generator</a>
+                    <a href="#">URL Shortener</a>
+                    <a href="#">IP Geolocation Finder</a>
+                    <a href="#">SSL Certificate Checker</a>
+                    <a href="#">Whois Lookup</a>
+                    <a href="#">HTTP Headers Checker</a>
+                    <a href="#">Privacy Policy Generator</a>
+                </div>
+            </div>
+            
+            <!-- Social Media Tools -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-share-alt"></i> Social Media Tools
+                </div>
+                <div class="tools-list">
+                    <a href="#">YouTube Thumbnail Downloader</a>
+                    <a href="#">Instagram Photo Downloader</a>
+                    <a href="#">Twitter Video Downloader</a>
+                    <a href="#">Facebook Video Downloader</a>
+                    <a href="#">TikTok Video Downloader</a>
+                    <a href="#">YouTube Tags Extractor</a>
+                    <a href="#">Hashtag Generator</a>
+                    <a href="#">Social Media Post Generator</a>
+                    <a href="#">Emoji Keyboard</a>
+                    <a href="#">Twitter Character Counter</a>
+                </div>
+            </div>
+            
+            <!-- Miscellaneous Tools -->
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-random"></i> Miscellaneous Tools
+                </div>
+                <div class="tools-list">
+                    <a href="#">Barcode Generator</a>
+                    <a href="#">Meme Generator</a>
+                    <a href="#">Resume Builder</a>
+                    <a href="#">Invoice Generator</a>
+                    <a href="#">Business Name Generator</a>
+                    <a href="#">Lottery Number Generator</a>
+                    <a href="#">Flip a Coin Simulator</a>
+                    <a href="#">Random Number Generator</a>
+                    <a href="#">Dice Roller Simulator</a>
+                    <a href="#">Internet Speed Test</a>
+                    <a href="#">Daily Planner Creator</a>
+                    <a href="#">Wedding Invitation Generator</a>
+                    <a href="#">Story Plot Generator</a>
+                    <a href="#">E-book Creator</a>
+                    <a href="#">AI Chatbot Demo</a>
+                    <a href="#">IP Address Tracker</a>
+                    <a href="#">Fake Address Generator</a>
+                    <a href="#">Calculator for Electric Bills</a>
+                    <a href="#">Leap Year Checker</a>
+                    <a href="#">Name to Numerology Calculator</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container popular-tools" id="popular">
+        <h2 class="section-title">Popular Tools</h2>
+        <div class="popular-grid">
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-image"></i>
+                </div>
+                <h3>Image Compressor</h3>
+                <p>Reduce image file size without losing quality</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>SEO Analyzer</h3>
+                <p>Check your website's SEO performance</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-font"></i>
+                </div>
+                <h3>Word Counter</h3>
+                <p>Count words and characters in your text</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Password Generator</h3>
+                <p>Create strong, secure passwords</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>BMI Calculator</h3>
+                <p>Calculate your Body Mass Index</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-ruler-combined"></i>
+                </div>
+                <h3>Unit Converter</h3>
+                <p>Convert between different measurement units</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <h3>QR Code Generator</h3>
+                <p>Create QR codes for any URL or text</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Screenshot to PDF</h3>
+                <p>Convert screenshots to PDF documents</p>
+                <a href="#" class="btn">Use Tool</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WebTools</h3>
+                    <p>Your one-stop destination for all online tools. Free, fast, and easy to use.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#popular">Popular Tools</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Image Tools</a></li>
+                        <li><a href="#">SEO Tools</a></li>
+                        <li><a href="#">Text Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                        <li><a href="#">Calculators</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contact@webtools.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tool Street, Internet City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 WebTools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-box button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-box input').value.toLowerCase();
+            if (searchTerm) {
+                alert('Searching for: ' + searchTerm + '\nThis is a demo. In a real implementation, this would filter tools.');
+            }
+        });
+        
+        // Allow search on Enter key
+        document.querySelector('.search-box input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-box button').click();
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
